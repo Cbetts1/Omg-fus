@@ -2,30 +2,47 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { SITE_NAME, MAIN_NAV_ZONES } from "@/lib/site-config";
 import styles from "./SiteNav.module.css";
 
 export function SiteNav() {
-  // Detect active path on client only to avoid SSR router-context issues
-  const [activePath, setActivePath] = useState<string>("");
+  const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
 
+  // Close mobile menu on route change
   useEffect(() => {
-    setActivePath(window.location.pathname);
-  }, []);
+    setMenuOpen(false);
+  }, [pathname]);
+
+  // Close mobile menu on outside click
+  useEffect(() => {
+    if (!menuOpen) return;
+    function handleClick(e: MouseEvent) {
+      const target = e.target as HTMLElement;
+      if (!target.closest("[data-nav-root]")) {
+        setMenuOpen(false);
+      }
+    }
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, [menuOpen]);
+
+  const navZones = MAIN_NAV_ZONES.filter((z) => z.path !== "/");
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-nav-root>
       <div className={styles.inner}>
         {/* Brand */}
         <Link href="/" className={styles.brand} aria-label="Betts Foundations home">
           <span className={styles.brandName}>{SITE_NAME}</span>
         </Link>
 
-        {/* Primary navigation */}
+        {/* Desktop navigation */}
         <nav aria-label="Primary navigation">
           <ul className={styles.navList}>
-            {MAIN_NAV_ZONES.filter((z) => z.path !== "/").map((zone) => {
-              const isActive = activePath === zone.path;
+            {navZones.map((zone) => {
+              const isActive = pathname === zone.path;
               const isGated = zone.gated;
               return (
                 <li key={zone.path}>
@@ -47,7 +64,55 @@ export function SiteNav() {
             })}
           </ul>
         </nav>
+
+        {/* Mobile hamburger */}
+        <button
+          className={styles.hamburger}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
+          onClick={() => setMenuOpen((o) => !o)}
+        >
+          <span className={styles.hamburgerBar} />
+          <span className={styles.hamburgerBar} />
+          <span className={styles.hamburgerBar} />
+        </button>
       </div>
+
+      {/* Mobile nav drawer */}
+      {menuOpen && (
+        <nav
+          id="mobile-nav"
+          className={styles.mobileNav}
+          aria-label="Mobile navigation"
+        >
+          <ul className={styles.mobileNavList}>
+            {navZones.map((zone) => {
+              const isActive = pathname === zone.path;
+              const isGated = zone.gated;
+              return (
+                <li key={zone.path}>
+                  <Link
+                    href={zone.path}
+                    className={`${styles.mobileNavLink} ${isActive ? styles.active : ""} ${isGated ? styles.gated : ""}`}
+                    aria-current={isActive ? "page" : undefined}
+                  >
+                    {zone.creativeName}
+                    {isGated && (
+                      <span aria-label="Locked" style={{ fontSize: "0.85em", marginLeft: 2 }}>
+                        🔒
+                      </span>
+                    )}
+                    <span style={{ marginLeft: "auto", fontSize: "0.75rem", color: "var(--text-muted)" }}>
+                      {zone.subtitle}
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }

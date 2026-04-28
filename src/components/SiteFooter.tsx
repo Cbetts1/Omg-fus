@@ -2,9 +2,9 @@ import Link from "next/link";
 import {
   SITE_NAME,
   SITE_TAGLINE,
-  UTILITY_NAV_ZONES,
   LEGAL_EMAIL,
   SUPPORT_EMAIL,
+  FOUNDER_NAME,
 } from "@/lib/site-config";
 
 export function SiteFooter() {
@@ -15,7 +15,7 @@ export function SiteFooter() {
       style={{
         borderTop: "1px solid var(--border)",
         background: "var(--bg-card)",
-        padding: "2.5rem 1.5rem",
+        padding: "3rem 1.5rem 2rem",
         marginTop: "auto",
       }}
     >
@@ -24,65 +24,108 @@ export function SiteFooter() {
           maxWidth: 1280,
           margin: "0 auto",
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-          gap: "2rem",
+          gridTemplateColumns: "2fr repeat(3, 1fr)",
+          gap: "2.5rem",
         }}
+        className="footer-grid"
       >
         {/* Brand column */}
         <div>
-          <p
-            style={{ fontWeight: 700, fontSize: "1rem", marginBottom: "0.5rem" }}
-          >
+          <p style={{ fontWeight: 800, fontSize: "1.05rem", marginBottom: "0.35rem", letterSpacing: "-0.01em" }}>
             {SITE_NAME}
           </p>
-          <p style={{ color: "var(--text-muted)", fontSize: "0.875rem" }}>
+          <p style={{ color: "var(--text-muted)", fontSize: "0.85rem", marginBottom: "1rem" }}>
             {SITE_TAGLINE}
+          </p>
+          <p style={{ color: "var(--text-muted)", fontSize: "0.8rem", lineHeight: 1.6, maxWidth: 280 }}>
+            Building the world's first public-use AI infrastructure. Open, sovereign, and free by design.
+          </p>
+          <p style={{ marginTop: "1rem", color: "var(--text-muted)", fontSize: "0.78rem" }}>
+            Founded by{" "}
+            <Link href="/founder" style={{ color: "var(--text-secondary)", fontWeight: 500 }}>
+              {FOUNDER_NAME}
+            </Link>
           </p>
         </div>
 
-        {/* Utility links */}
+        {/* Platform links */}
         <div>
           <p
             style={{
               fontWeight: 600,
-              fontSize: "0.8rem",
+              fontSize: "0.75rem",
               textTransform: "uppercase",
-              letterSpacing: "0.08em",
+              letterSpacing: "0.1em",
               color: "var(--text-muted)",
-              marginBottom: "0.75rem",
+              marginBottom: "0.9rem",
             }}
           >
-            Company
+            Platform
           </p>
-          <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-            {UTILITY_NAV_ZONES.map((zone) => (
-              <li key={zone.path}>
-                <Link
-                  href={zone.path}
-                  style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}
-                >
-                  {zone.subtitle}
+          <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+            {[
+              { href: "/ai-lab", label: "The Forge" },
+              { href: "/security", label: "The Citadel" },
+              { href: "/store", label: "StoreX" },
+              { href: "/tools", label: "Tools Hub" },
+              { href: "/knowledge", label: "The Archives" },
+              { href: "/vision", label: "The Vision" },
+            ].map(({ href, label }) => (
+              <li key={href}>
+                <Link href={href} style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}>
+                  {label}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Legal links */}
+        {/* Company / utility links */}
         <div>
           <p
             style={{
               fontWeight: 600,
-              fontSize: "0.8rem",
+              fontSize: "0.75rem",
               textTransform: "uppercase",
-              letterSpacing: "0.08em",
+              letterSpacing: "0.1em",
               color: "var(--text-muted)",
-              marginBottom: "0.75rem",
+              marginBottom: "0.9rem",
+            }}
+          >
+            Company
+          </p>
+          <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+            {[
+              { href: "/founder", label: "The Architect" },
+              { href: "/pricing", label: "Pricing" },
+              { href: "/contact", label: "Contact" },
+              { href: "/support", label: "Support" },
+              { href: "/status", label: "System Status" },
+            ].map(({ href, label }) => (
+              <li key={href}>
+                <Link href={href} style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}>
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Legal + Contact */}
+        <div>
+          <p
+            style={{
+              fontWeight: 600,
+              fontSize: "0.75rem",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              color: "var(--text-muted)",
+              marginBottom: "0.9rem",
             }}
           >
             Legal
           </p>
-          <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+          <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.5rem", marginBottom: "1.25rem" }}>
             <li>
               <Link href="/legal/privacy" style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}>
                 Privacy Policy
@@ -99,43 +142,34 @@ export function SiteFooter() {
               </Link>
             </li>
           </ul>
-        </div>
-
-        {/* Contact */}
-        <div>
           <p
             style={{
               fontWeight: 600,
-              fontSize: "0.8rem",
+              fontSize: "0.75rem",
               textTransform: "uppercase",
-              letterSpacing: "0.08em",
+              letterSpacing: "0.1em",
               color: "var(--text-muted)",
-              marginBottom: "0.75rem",
+              marginBottom: "0.6rem",
             }}
           >
             Contact
           </p>
           <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
             <li>
-              <a
-                href={`mailto:${SUPPORT_EMAIL}`}
-                style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}
-              >
+              <a href={`mailto:${SUPPORT_EMAIL}`} style={{ fontSize: "0.825rem", color: "var(--text-secondary)" }}>
                 {SUPPORT_EMAIL}
               </a>
             </li>
             <li>
-              <a
-                href={`mailto:${LEGAL_EMAIL}`}
-                style={{ fontSize: "0.875rem", color: "var(--text-muted)" }}
-              >
-                Legal / Privacy
+              <a href={`mailto:${LEGAL_EMAIL}`} style={{ fontSize: "0.825rem", color: "var(--text-muted)" }}>
+                Legal enquiries
               </a>
             </li>
           </ul>
         </div>
       </div>
 
+      {/* Bottom bar */}
       <div
         style={{
           maxWidth: 1280,
@@ -146,8 +180,8 @@ export function SiteFooter() {
           justifyContent: "space-between",
           alignItems: "center",
           flexWrap: "wrap",
-          gap: "0.5rem",
-          fontSize: "0.8rem",
+          gap: "0.75rem",
+          fontSize: "0.78rem",
           color: "var(--text-muted)",
         }}
       >
@@ -156,11 +190,24 @@ export function SiteFooter() {
         </span>
         <span>
           AI-assisted content may appear on this site.{" "}
-          <Link href="/legal/ai-disclosure" style={{ color: "var(--text-muted)" }}>
+          <Link href="/legal/ai-disclosure" style={{ color: "var(--text-muted)", textDecoration: "underline" }}>
             Learn more
           </Link>
         </span>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .footer-grid {
+            grid-template-columns: 1fr 1fr !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .footer-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </footer>
   );
 }
