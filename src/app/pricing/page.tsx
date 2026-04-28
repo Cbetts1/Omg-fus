@@ -196,7 +196,7 @@ export default function PricingPage() {
             textTransform: "uppercase",
             letterSpacing: "0.08em",
             fontSize: "0.85rem",
-          } as React.CSSProperties}
+          }}
         >
           Pricing FAQ
         </h2>
