@@ -12,9 +12,6 @@ export const SITE_TAGLINE = "Intelligence. Security. Creation.";
 export const FOUNDER_NAME = "Chris Betts";
 export const FOUNDER_TITLE = "Founder & Architect — Betts Foundations / VAGA·AIOS";
 
-export const FOUNDER_BIO_LEAD =
-  "Chris Betts is the founder, operator, and chief architect of Betts Foundations and the VAGA/AIOS ecosystem — a sovereign, operator-grade AI infrastructure built to return technological power to the public.";
-
 export const FOUNDER_BIO_FULL = `
 Chris Betts is the founder, operator, and chief architect of Betts Foundations — a public AI infrastructure project grounded in a straightforward belief: the tools that shape the next era of the internet should belong to the people who live in it.
 

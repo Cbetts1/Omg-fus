@@ -1,5 +1,9 @@
 "use client";
 
+// `unstable_retry` is the Next.js 16.2+ replacement for the old `reset` prop on
+// global-error boundaries. The "unstable_" prefix is a Next.js naming convention
+// for recently-introduced APIs — it is intentional and documented in the framework.
+// See: https://nextjs.org/docs/app/api-reference/file-conventions/error#global-error
 export default function GlobalError({
   unstable_retry,
 }: {

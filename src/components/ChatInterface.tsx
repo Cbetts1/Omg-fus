@@ -17,13 +17,10 @@ const DEMO_RESPONSES: string[] = [
   "Phase 3 of Betts Foundations will bring the full live AI integration online. For now, this interface is running in preview mode — but the architecture, the design principles, and the direction are all real.",
 ];
 
-let demoIndex = 0;
-
-function getDemoResponse(): string {
-  const response = DEMO_RESPONSES[demoIndex % DEMO_RESPONSES.length];
-  demoIndex++;
-  return response;
-}
+/** Minimum simulated response delay in ms */
+const RESPONSE_DELAY_MIN_MS = 800;
+/** Random jitter added to response delay in ms */
+const RESPONSE_DELAY_JITTER_MS = 600;
 
 export function ChatInterface() {
   const [messages, setMessages] = useState<Message[]>([
@@ -37,8 +34,16 @@ export function ChatInterface() {
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+  /** Tracks which demo response to show next, local to this component instance */
+  const demoIndexRef = useRef(0);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  function getNextDemoResponse(): string {
+    const response = DEMO_RESPONSES[demoIndexRef.current % DEMO_RESPONSES.length];
+    demoIndexRef.current += 1;
+    return response;
+  }
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -60,11 +65,10 @@ export function ChatInterface() {
     setInput("");
     setIsTyping(true);
 
-    // Simulate a response delay (preview mode)
-    const delay = 800 + Math.random() * 600;
+    const delay = RESPONSE_DELAY_MIN_MS + Math.random() * RESPONSE_DELAY_JITTER_MS;
     await new Promise((r) => setTimeout(r, delay));
 
-    const responseText = getDemoResponse();
+    const responseText = getNextDemoResponse();
     const assistantMsg: Message = {
       id: `a-${Date.now()}`,
       role: "assistant",
