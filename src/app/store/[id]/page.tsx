@@ -3,7 +3,7 @@ import { STORE_PRODUCTS, SITE_NAME, AI_DISCLOSURE_LABEL } from "@/lib/site-confi
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 interface Params {
   id: string;

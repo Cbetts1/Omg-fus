@@ -26,9 +26,6 @@ export function AuraMascot({
   return (
     <div
       className={className}
-      aria-hidden={decorative ? "true" : undefined}
-      role={decorative ? "presentation" : "img"}
-      aria-label={decorative ? undefined : "AURA — the Betts Foundations AI mascot"}
       style={{
         width: size,
         height: size,
@@ -43,6 +40,9 @@ export function AuraMascot({
         height={size}
         xmlns="http://www.w3.org/2000/svg"
         style={{ display: "block", overflow: "visible" }}
+        role={decorative ? "presentation" : "img"}
+        aria-label={decorative ? undefined : "AURA — the Betts Foundations AI mascot"}
+        aria-hidden={decorative ? "true" : undefined}
       >
         <defs>
           {/* Main body gradient — steel-blue */}

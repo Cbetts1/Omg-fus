@@ -307,7 +307,7 @@ export const STORE_PRODUCTS: StoreProduct[] = [
   },
   {
     id: "operator-field-manual",
-    name: "The Operator\u2019s Field Manual",
+    name: "The Operator's Field Manual",
     tagline: "Everything you need to run real infrastructure, solo.",
     description:
       "A practical reference manual for solo operators and small teams managing production systems. Covers day-to-day tasks, incident response, server maintenance, and security hygiene — all in one place.",

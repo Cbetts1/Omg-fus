@@ -15,11 +15,13 @@ export function SiteNav() {
     setMenuOpen(false);
   }, [pathname]);
 
-  // Close mobile menu on outside click
+  // Close mobile menu on outside click (exclude hamburger — its own onClick handles that)
   useEffect(() => {
     if (!menuOpen) return;
     function handleClick(e: MouseEvent) {
       const target = e.target as HTMLElement;
+      // Skip if the click originated from the hamburger button or nav root
+      if (target.closest("[data-hamburger]")) return;
       if (!target.closest("[data-nav-root]")) {
         setMenuOpen(false);
       }
@@ -71,6 +73,7 @@ export function SiteNav() {
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           aria-controls="mobile-nav"
+          data-hamburger
           onClick={() => setMenuOpen((o) => !o)}
         >
           <span className={styles.hamburgerBar} />

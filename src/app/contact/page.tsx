@@ -34,7 +34,7 @@ const CONTACT_CHANNELS = [
     subtitle: "Work together",
     desc: "Interested in collaborating, contributing to the ecosystem, or discussing infrastructure partnerships? Reach out to support — include \u201cPartnership\u201d in the subject line.",
     email: SUPPORT_EMAIL,
-    color: "#06d6a0",
+    color: "#34d399",
   },
   {
     icon: "📣",
@@ -42,7 +42,7 @@ const CONTACT_CHANNELS = [
     subtitle: "Coverage & interviews",
     desc: "For press inquiries, interview requests, and media coverage of Betts Foundations or the VAGA/AIOS project. Include \u201cPress\u201d in the subject line.",
     email: SUPPORT_EMAIL,
-    color: "#ffd166",
+    color: "#fbbf24",
   },
 ];
 
