@@ -60,7 +60,7 @@
 
 .navLink.active {
   color: var(--accent);
-  background: rgba(108, 99, 255, 0.1);
+  background: rgba(129, 140, 248, 0.1);
 }
 
 .navLink.gated {
@@ -77,9 +77,94 @@
   font-size: 0.7rem;
 }
 
-/* Hide overflow nav on very small screens — show hamburger in future Phase */
+/* Hamburger button — hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.hamburgerBar {
+  width: 18px;
+  height: 2px;
+  background: var(--text-secondary);
+  border-radius: 2px;
+  transition: background 0.15s ease;
+}
+
+.hamburger:hover .hamburgerBar {
+  background: var(--text-primary);
+}
+
+/* Mobile drawer */
+.mobileNav {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 15, 0.97);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.5rem 1.5rem;
+  z-index: 48;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.mobileNavList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.mobileNavLink:hover {
+  color: var(--text-primary);
+  background: var(--bg-card);
+}
+
+.mobileNavLink.active {
+  color: var(--accent);
+  background: rgba(129, 140, 248, 0.1);
+}
+
+.mobileNavLink.gated {
+  color: var(--gated);
+}
+
 @media (max-width: 640px) {
   .navList {
     display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobileNav {
+    display: block;
   }
 }

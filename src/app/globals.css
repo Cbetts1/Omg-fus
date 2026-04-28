@@ -1,18 +1,41 @@
 @import "tailwindcss";
 
-/* ─── Design Tokens ─────────────────────────────────────────────────────────── */
+/* ─── Design Tokens — Steel / Gunmetal Tech ─────────────────────────────────── */
 :root {
-  --bg: #0a0a0f;
-  --bg-card: #12121a;
-  --bg-card-hover: #1a1a28;
-  --border: #2a2a3d;
-  --accent: #6c63ff;
-  --accent-glow: rgba(108, 99, 255, 0.25);
-  --accent-2: #00d4ff;
-  --text-primary: #f0f0ff;
-  --text-secondary: #9898b8;
-  --text-muted: #5a5a7a;
-  --gated: #ff6b6b;
+  /* Backgrounds — dark steel plates */
+  --bg: #0c0d11;
+  --bg-card: #13161e;
+  --bg-card-hover: #1b1f2c;
+
+  /* Borders — steel plate edges */
+  --border: #252b3a;
+  --border-subtle: #1c2030;
+
+  /* Accent — indigo-steel primary */
+  --accent: #818cf8;
+  --accent-glow: rgba(129, 140, 248, 0.22);
+
+  /* Accent 2 — steel sky blue */
+  --accent-2: #38bdf8;
+
+  /* Accent 3 — violet (used sparingly) */
+  --accent-3: #a78bfa;
+
+  /* Metallic silver — used for highlights, badge text */
+  --silver: #94a3b8;
+  --silver-bright: #c8d0e0;
+
+  /* Text */
+  --text-primary: #e2e8f0;
+  --text-secondary: #8b96b4;
+  --text-muted: #4b5675;
+
+  /* Gated / alert */
+  --gated: #fb7185;
+
+  /* Status */
+  --status-ok: #34d399;
+  --status-warn: #fbbf24;
 }
 
 /* ─── Base ───────────────────────────────────────────────────────────────────── */
@@ -41,6 +64,7 @@ body {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 
 /* ─── Typography ─────────────────────────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
@@ -65,13 +89,34 @@ a:hover { color: var(--accent-2); }
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.5rem;
-  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
 }
 
 .card:hover {
   background: var(--bg-card-hover);
   border-color: var(--accent);
-  box-shadow: 0 0 16px var(--accent-glow);
+  box-shadow: 0 0 20px var(--accent-glow), 0 4px 24px rgba(0,0,0,0.35);
+  transform: translateY(-1px);
+}
+
+/* ─── Steel gradient — used on page headings ─────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--silver-bright) 0%, var(--accent) 55%, var(--accent-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Badge ──────────────────────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
 }
 
 /* ─── Motion: respect prefers-reduced-motion ─────────────────────────────────── */
@@ -89,4 +134,21 @@ a:hover { color: var(--accent-2); }
   outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+/* ─── Metallic shimmer animation (used on mascot & accents) ─────────────────── */
+@keyframes shimmer {
+  0%   { opacity: 0.7; }
+  50%  { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 12px var(--accent-glow); }
+  50%       { box-shadow: 0 0 28px rgba(129, 140, 248, 0.45); }
 }

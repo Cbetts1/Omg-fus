@@ -20,16 +20,18 @@ const ZONE_POSITIONS: ZonePosition[] = [
   { path: "/tools",    cx: 615, cy: 360, w: 120, h: 50 }, // Tools Hub — lower-right
   { path: "/knowledge",cx: 400, cy: 430, w: 130, h: 50 }, // Archives — bottom center
   { path: "/advanced", cx: 400, cy: 80,  w: 120, h: 50 }, // UnderNet — top center
+  { path: "/vision",   cx: 680, cy: 250, w: 100, h: 50 }, // Vision — right center
 ];
 
 const COLORS: Record<string, string> = {
-  "/":         "#6c63ff",
-  "/ai-lab":   "#00d4ff",
-  "/security": "#ff6b6b",
-  "/store":    "#ffd166",
-  "/tools":    "#06d6a0",
-  "/knowledge":"#9b72cf",
-  "/advanced": "#ff6b6b",
+  "/":         "#818cf8",
+  "/ai-lab":   "#38bdf8",
+  "/security": "#fb7185",
+  "/store":    "#fbbf24",
+  "/tools":    "#34d399",
+  "/knowledge":"#a78bfa",
+  "/advanced": "#fb7185",
+  "/vision":   "#38bdf8",
 };
 
 function getZoneByPath(path: string): ZoneConfig | undefined {
@@ -51,7 +53,7 @@ export function ZoneMap() {
           {/* Background grid */}
           <defs>
             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1a28" strokeWidth="1" />
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1b1f2c" strokeWidth="1" />
             </pattern>
             <filter id="glow">
               <feGaussianBlur stdDeviation="3" result="coloredBlur" />
@@ -62,12 +64,12 @@ export function ZoneMap() {
             </filter>
           </defs>
 
-          <rect width="800" height="500" fill="#0d0d18" rx="12" />
+          <rect width="800" height="500" fill="#0c0d11" rx="12" />
           <rect width="800" height="500" fill="url(#grid)" rx="12" />
 
           {/* Connector lines from center to each zone */}
           {ZONE_POSITIONS.filter((z) => z.path !== "/").map((z) => {
-            const color = COLORS[z.path] ?? "#6c63ff";
+            const color = COLORS[z.path] ?? "#818cf8";
             const center = ZONE_POSITIONS.find((p) => p.path === "/")!;
             return (
               <line
@@ -88,7 +90,7 @@ export function ZoneMap() {
           {ZONE_POSITIONS.map((pos) => {
             const zone = getZoneByPath(pos.path);
             if (!zone) return null;
-            const color = COLORS[pos.path] ?? "#6c63ff";
+            const color = COLORS[pos.path] ?? "#818cf8";
             const isGated = zone.gated;
 
             return (
@@ -104,7 +106,7 @@ export function ZoneMap() {
                     width={pos.w}
                     height={pos.h}
                     rx="8"
-                    fill="#12121a"
+                    fill="#13161e"
                     stroke={color}
                     strokeWidth={pos.path === "/" ? "2" : "1"}
                     opacity={isGated ? 0.6 : 1}
@@ -128,7 +130,7 @@ export function ZoneMap() {
                     x={pos.w / 2}
                     y={pos.h / 2 + 12}
                     textAnchor="middle"
-                    fill="#9898b8"
+                    fill="#8b96b4"
                     fontSize="9"
                     fontFamily="system-ui, sans-serif"
                   >
@@ -152,7 +154,7 @@ export function ZoneMap() {
           }}
         >
           {MAIN_NAV_ZONES.map((zone) => {
-            const color = COLORS[zone.path] ?? "#6c63ff";
+            const color = COLORS[zone.path] ?? "#818cf8";
             return (
               <li key={zone.path}>
                 <Link
