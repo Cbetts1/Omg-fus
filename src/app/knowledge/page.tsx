@@ -30,7 +30,7 @@ const CATEGORIES: CategorySection[] = [
   {
     name: "AI Automation",
     icon: "🤖",
-    color: "#6c63ff",
+    color: "#818cf8",
     articles: [
       {
         title: "Designing AI Workflows That Don't Break at 3am",
@@ -56,7 +56,7 @@ const CATEGORIES: CategorySection[] = [
   {
     name: "Security & Threat Models",
     icon: "🛡️",
-    color: "#ff6b6b",
+    color: "#fb7185",
     articles: [
       {
         title: "STRIDE for Solo Operators: A Practical Introduction",
@@ -81,7 +81,7 @@ const CATEGORIES: CategorySection[] = [
   {
     name: "Developer Tools",
     icon: "🔧",
-    color: "#00d4ff",
+    color: "#38bdf8",
     articles: [
       {
         title: "Git Aliases That Actually Save Time",
@@ -183,7 +183,7 @@ const CATEGORIES: CategorySection[] = [
   {
     name: "AURA OS Architecture",
     icon: "◈",
-    color: "#6c63ff",
+    color: "#818cf8",
     articles: [
       {
         title: "What AURA Is and Why It Exists",
@@ -208,7 +208,7 @@ const CATEGORIES: CategorySection[] = [
   {
     name: "Case Studies & Breakdowns",
     icon: "🔍",
-    color: "#ff6b6b",
+    color: "#fb7185",
     articles: [
       {
         title: "Recovering a Corrupted Server Directory: What Actually Works",
@@ -239,8 +239,8 @@ export default function KnowledgePage() {
       {/* AI disclosure */}
       <div
         style={{
-          background: "rgba(108,99,255,0.07)",
-          border: "1px solid rgba(108,99,255,0.25)",
+          background: "rgba(129,140,248,0.07)",
+          border: "1px solid rgba(129,140,248,0.25)",
           borderRadius: 8,
           padding: "0.75rem 1rem",
           marginBottom: "2.5rem",
@@ -319,9 +319,9 @@ export default function KnowledgePage() {
                         style={{
                           fontSize: "0.65rem",
                           padding: "0.1rem 0.35rem",
-                          background: "rgba(108,99,255,0.1)",
+                          background: "rgba(129,140,248,0.1)",
                           color: "var(--accent)",
-                          border: "1px solid rgba(108,99,255,0.2)",
+                          border: "1px solid rgba(129,140,248,0.2)",
                           borderRadius: 3,
                           marginLeft: "auto",
                         }}

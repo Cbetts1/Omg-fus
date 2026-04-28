@@ -22,8 +22,8 @@ const services = [
 const STATUS_COLORS: Record<string, string> = {
   operational: "#06d6a0",
   degraded: "#ffd166",
-  outage: "#ff6b6b",
-  phase2: "#5a5a7a",
+  outage: "#fb7185",
+  phase2: "#4b5675",
 };
 
 const STATUS_LABELS: Record<string, string> = {

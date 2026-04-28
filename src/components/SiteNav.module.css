@@ -60,7 +60,7 @@
 
 .navLink.active {
   color: var(--accent);
-  background: rgba(108, 99, 255, 0.1);
+  background: rgba(129, 140, 248, 0.1);
 }
 
 .navLink.gated {
@@ -148,7 +148,7 @@
 
 .mobileNavLink.active {
   color: var(--accent);
-  background: rgba(108, 99, 255, 0.1);
+  background: rgba(129, 140, 248, 0.1);
 }
 
 .mobileNavLink.gated {

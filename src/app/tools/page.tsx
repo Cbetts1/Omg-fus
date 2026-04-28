@@ -29,7 +29,7 @@ const TOOL_CATEGORIES = [
     icon: "🗂️",
     title: "Productivity Systems",
     phase: "Phase 1",
-    color: "#6c63ff",
+    color: "#818cf8",
     desc: "Structured templates for knowledge management, project tracking, and operator workflows. Built around real operational patterns.",
     tools: [
       { name: "Operator Dashboard (Obsidian)", desc: "A complete Obsidian vault template with daily notes, project trackers, and system documentation structure." },
@@ -55,7 +55,7 @@ const TOOL_CATEGORIES = [
     icon: "🔧",
     title: "Developer Utilities",
     phase: "Phase 2",
-    color: "#00d4ff",
+    color: "#38bdf8",
     desc: "CLI helpers, code quality tools, and workflow accelerators for developers. Reduce context-switching and keep momentum.",
     tools: [
       { name: "Git Alias Pack", desc: "A curated .gitconfig alias set for common git operations — faster branching, cleaner logs, safer resets." },

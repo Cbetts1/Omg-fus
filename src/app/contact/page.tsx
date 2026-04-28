@@ -18,7 +18,7 @@ const CONTACT_CHANNELS = [
     subtitle: "Product & access issues",
     desc: "For questions about products you have purchased, download issues, access problems, or technical help with the platform.",
     email: SUPPORT_EMAIL,
-    color: "#6c63ff",
+    color: "#818cf8",
   },
   {
     icon: "⚖️",
@@ -26,7 +26,7 @@ const CONTACT_CHANNELS = [
     subtitle: "Data requests & inquiries",
     desc: "For data access or deletion requests, privacy concerns, copyright matters, and any other legal or compliance inquiries.",
     email: LEGAL_EMAIL,
-    color: "#00d4ff",
+    color: "#38bdf8",
   },
   {
     icon: "🤝",
@@ -110,8 +110,8 @@ export default function ContactPage() {
       {/* Response time note */}
       <div
         style={{
-          background: "rgba(108,99,255,0.06)",
-          border: "1px solid rgba(108,99,255,0.2)",
+          background: "rgba(129,140,248,0.06)",
+          border: "1px solid rgba(129,140,248,0.2)",
           borderRadius: 10,
           padding: "1.25rem 1.5rem",
           maxWidth: 600,

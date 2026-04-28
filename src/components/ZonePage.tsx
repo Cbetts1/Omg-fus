@@ -31,7 +31,7 @@ export function ZonePage({ zone, children }: ZonePageProps) {
             letterSpacing: "-0.03em",
             lineHeight: 1.1,
             marginBottom: "1rem",
-            background: "linear-gradient(135deg, #f0f0ff 0%, #6c63ff 65%, #00d4ff 100%)",
+            background: "linear-gradient(135deg, var(--silver-bright) 0%, var(--accent) 55%, var(--accent-2) 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}

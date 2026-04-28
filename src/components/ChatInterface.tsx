@@ -108,7 +108,7 @@ export function ChatInterface() {
           display: "flex",
           alignItems: "center",
           gap: "0.75rem",
-          background: "rgba(108,99,255,0.06)",
+          background: "rgba(129,140,248,0.06)",
           flexShrink: 0,
         }}
       >
@@ -168,14 +168,14 @@ export function ChatInterface() {
                 width: 28,
                 height: 28,
                 borderRadius: "50%",
-                background: msg.role === "user" ? "rgba(108,99,255,0.3)" : "rgba(0,212,255,0.15)",
-                border: `1px solid ${msg.role === "user" ? "var(--accent)" : "rgba(0,212,255,0.4)"}`,
+                background: msg.role === "user" ? "rgba(129,140,248,0.3)" : "rgba(56,189,248,0.15)",
+                border: `1px solid ${msg.role === "user" ? "var(--accent)" : "rgba(56,189,248,0.4)"}`,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 fontSize: "0.65rem",
                 fontWeight: 800,
-                color: msg.role === "user" ? "var(--accent)" : "#00d4ff",
+                color: msg.role === "user" ? "var(--accent)" : "#38bdf8",
                 flexShrink: 0,
               }}
             >
@@ -190,11 +190,11 @@ export function ChatInterface() {
                 borderRadius: msg.role === "user" ? "12px 12px 4px 12px" : "12px 12px 12px 4px",
                 background:
                   msg.role === "user"
-                    ? "rgba(108,99,255,0.15)"
-                    : "#12121a",
+                    ? "rgba(129,140,248,0.15)"
+                    : "#13161e",
                 border: `1px solid ${
                   msg.role === "user"
-                    ? "rgba(108,99,255,0.3)"
+                    ? "rgba(129,140,248,0.3)"
                     : "var(--border)"
                 }`,
                 fontSize: "0.9rem",
@@ -216,14 +216,14 @@ export function ChatInterface() {
                 width: 28,
                 height: 28,
                 borderRadius: "50%",
-                background: "rgba(0,212,255,0.15)",
-                border: "1px solid rgba(0,212,255,0.4)",
+                background: "rgba(56,189,248,0.15)",
+                border: "1px solid rgba(56,189,248,0.4)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 fontSize: "0.65rem",
                 fontWeight: 800,
-                color: "#00d4ff",
+                color: "#38bdf8",
                 flexShrink: 0,
               }}
             >
@@ -233,7 +233,7 @@ export function ChatInterface() {
               style={{
                 padding: "0.75rem 1rem",
                 borderRadius: "12px 12px 12px 4px",
-                background: "#12121a",
+                background: "#13161e",
                 border: "1px solid var(--border)",
                 display: "flex",
                 alignItems: "center",
@@ -293,7 +293,7 @@ export function ChatInterface() {
           disabled={!input.trim() || isTyping}
           style={{
             padding: "0.65rem 1.1rem",
-            background: input.trim() && !isTyping ? "var(--accent)" : "rgba(108,99,255,0.2)",
+            background: input.trim() && !isTyping ? "var(--accent)" : "rgba(129,140,248,0.2)",
             color: input.trim() && !isTyping ? "#fff" : "var(--text-muted)",
             border: "none",
             borderRadius: 10,
@@ -315,7 +315,7 @@ export function ChatInterface() {
           width: 6px;
           height: 6px;
           border-radius: 50%;
-          background: #00d4ff;
+          background: #38bdf8;
           animation: typing-pulse 1.2s ease-in-out infinite;
         }
 

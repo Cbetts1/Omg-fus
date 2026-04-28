@@ -19,14 +19,14 @@ const VAGA_COMPONENTS = [
     name: "AURA",
     role: "Reasoning Core",
     desc: "Memory, context, and judgment — the mind of the system. AURA holds the state of an ongoing intelligence session and applies structured reasoning to every decision the system makes.",
-    color: "#6c63ff",
+    color: "#818cf8",
   },
   {
     sigil: "◉",
     name: "AIOS",
     role: "Operating Layer",
     desc: "The environment intelligence runs inside. AIOS provides the process management, resource allocation, and communication bus that every other component depends on.",
-    color: "#00d4ff",
+    color: "#38bdf8",
   },
   {
     sigil: "◎",
@@ -54,7 +54,7 @@ const VAGA_COMPONENTS = [
     name: "ASTRA & NOVA",
     role: "Specialized Extensions",
     desc: "Domain-specific reasoning limbs. ASTRA and NOVA extend the core architecture into targeted areas — research synthesis, creative generation, and deep analytical work.",
-    color: "#ff6b6b",
+    color: "#fb7185",
   },
 ];
 
@@ -296,8 +296,8 @@ export default function FounderPage() {
 
           <div
             style={{
-              background: "rgba(108,99,255,0.07)",
-              border: "1px solid rgba(108,99,255,0.25)",
+              background: "rgba(129,140,248,0.07)",
+              border: "1px solid rgba(129,140,248,0.25)",
               borderRadius: 12,
               padding: "1.25rem",
             }}

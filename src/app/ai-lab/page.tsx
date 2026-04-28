@@ -88,7 +88,7 @@ export default function AiLabPage() {
                   style={{
                     fontSize: "0.65rem",
                     padding: "0.15rem 0.4rem",
-                    background: "rgba(108,99,255,0.12)",
+                    background: "rgba(129,140,248,0.12)",
                     color: "var(--text-muted)",
                     borderRadius: 4,
                     whiteSpace: "nowrap",

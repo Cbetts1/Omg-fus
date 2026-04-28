@@ -18,7 +18,7 @@ const MODULES = [
     phase: "Phase 1",
     desc: "Structured frameworks for mapping attack surfaces, identifying entry points, and prioritising defensive effort. Covers STRIDE, PASTA, and operator-adapted models for small team environments.",
     items: ["STRIDE methodology", "Attack surface mapping", "Risk prioritisation matrices", "VPS-specific threat profiles"],
-    color: "#ff6b6b",
+    color: "#fb7185",
   },
   {
     icon: "🛡️",
@@ -50,7 +50,7 @@ const MODULES = [
     phase: "Phase 2",
     desc: "Practical guidance on identity architecture, secrets management, and access control for operators running real infrastructure — not enterprise IAM theory.",
     items: ["SSH certificate authorities", "Secrets management (Vault, .env patterns)", "Role-based access design", "Audit log configuration"],
-    color: "#00d4ff",
+    color: "#38bdf8",
   },
   {
     icon: "📡",
@@ -58,7 +58,7 @@ const MODULES = [
     phase: "Phase 2",
     desc: "From Cloudflare edge configuration to internal network segmentation. Covers both the perimeter and the internal trust model for multi-service VPS environments.",
     items: ["Cloudflare WAF & rate limiting", "Internal network segmentation", "DNS security & DNSSEC", "Traffic analysis basics"],
-    color: "#6c63ff",
+    color: "#818cf8",
   },
 ];
 

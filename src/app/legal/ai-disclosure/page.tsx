@@ -21,8 +21,8 @@ export default function AiDisclosurePage() {
       {/* Prominent disclosure box */}
       <div
         style={{
-          background: "rgba(108,99,255,0.1)",
-          border: "1px solid rgba(108,99,255,0.4)",
+          background: "rgba(129,140,248,0.1)",
+          border: "1px solid rgba(129,140,248,0.4)",
           borderRadius: 10,
           padding: "1.25rem 1.5rem",
           marginBottom: "2.5rem",

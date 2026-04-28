@@ -21,13 +21,13 @@ const NEW_SYSTEM = [
     sigil: "VM",
     label: "Virtual Mind",
     desc: "A persistent, sovereign reasoning entity. Not a chatbot — a mind with memory, context, and purpose that persists across sessions.",
-    color: "#6c63ff",
+    color: "#818cf8",
   },
   {
     sigil: "VAI",
     label: "Virtual AI Agents",
     desc: "Specialised intelligence units that act, communicate, and coordinate inside the network. Each agent has a role; together they form a system.",
-    color: "#00d4ff",
+    color: "#38bdf8",
   },
   {
     sigil: "VOS",
@@ -95,7 +95,7 @@ export default function VisionPage() {
             letterSpacing: "-0.04em",
             lineHeight: 1.05,
             marginBottom: "1.25rem",
-            background: "linear-gradient(135deg, #f0f0ff 0%, #6c63ff 55%, #00d4ff 100%)",
+            background: "linear-gradient(135deg, #e2e8f0 0%, #818cf8 55%, #38bdf8 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
@@ -406,8 +406,8 @@ export default function VisionPage() {
       {/* ── Public Mission ── */}
       <section
         style={{
-          background: "linear-gradient(135deg, rgba(108,99,255,0.08) 0%, rgba(0,212,255,0.05) 100%)",
-          border: "1px solid rgba(108,99,255,0.25)",
+          background: "linear-gradient(135deg, rgba(129,140,248,0.08) 0%, rgba(56,189,248,0.05) 100%)",
+          border: "1px solid rgba(129,140,248,0.25)",
           borderRadius: 16,
           padding: "2.5rem",
           marginBottom: "4rem",
@@ -468,7 +468,7 @@ export default function VisionPage() {
               padding: "0.75rem 1.75rem",
               background: "transparent",
               color: "var(--accent)",
-              border: "1px solid rgba(108,99,255,0.4)",
+              border: "1px solid rgba(129,140,248,0.4)",
               borderRadius: 8,
               fontWeight: 600,
               textDecoration: "none",

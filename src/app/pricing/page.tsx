@@ -28,7 +28,7 @@ const TIERS = [
     cta: "Start Free",
     ctaHref: "/knowledge",
     highlight: false,
-    color: "#9898b8",
+    color: "#8b96b4",
   },
   {
     name: "Operator",
@@ -47,7 +47,7 @@ const TIERS = [
     cta: "Notify Me",
     ctaHref: "/contact",
     highlight: true,
-    color: "#6c63ff",
+    color: "#818cf8",
   },
   {
     name: "UnderNet",
@@ -65,7 +65,7 @@ const TIERS = [
     cta: "Learn More",
     ctaHref: "/advanced",
     highlight: false,
-    color: "#ff6b6b",
+    color: "#fb7185",
   },
 ];
 
@@ -105,7 +105,7 @@ export default function PricingPage() {
             className="card"
             style={
               highlight
-                ? { borderColor: color, boxShadow: "0 0 24px rgba(108,99,255,0.15)", display: "flex", flexDirection: "column" }
+                ? { borderColor: color, boxShadow: "0 0 24px rgba(129,140,248,0.15)", display: "flex", flexDirection: "column" }
                 : { display: "flex", flexDirection: "column" }
             }
           >
