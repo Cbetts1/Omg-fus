@@ -20,6 +20,7 @@ const ZONE_POSITIONS: ZonePosition[] = [
   { path: "/tools",    cx: 615, cy: 360, w: 120, h: 50 }, // Tools Hub — lower-right
   { path: "/knowledge",cx: 400, cy: 430, w: 130, h: 50 }, // Archives — bottom center
   { path: "/advanced", cx: 400, cy: 80,  w: 120, h: 50 }, // UnderNet — top center
+  { path: "/vision",   cx: 680, cy: 250, w: 100, h: 50 }, // Vision — right center
 ];
 
 const COLORS: Record<string, string> = {
@@ -30,6 +31,7 @@ const COLORS: Record<string, string> = {
   "/tools":    "#06d6a0",
   "/knowledge":"#9b72cf",
   "/advanced": "#ff6b6b",
+  "/vision":   "#00d4ff",
 };
 
 function getZoneByPath(path: string): ZoneConfig | undefined {
